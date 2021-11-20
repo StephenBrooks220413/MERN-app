@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Nav from './Nav';
+import './mdb5/css/mdb.min.css';
 import ReactQuill from 'react-quill';
 import { getUser, getToken } from './helpers';
 import 'react-quill/dist/quill.bubble.css';
@@ -56,50 +57,71 @@ const Create = () => {
     };
 
     return (
-        <div className="container pb-5">
+        <div>
             <Nav />
-            <br />
-            <h1>CREATE POST</h1>
-            <br />
+            <div className={"container space"}>
+                <h1>CREATE POST</h1>
+                <br />
 
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label className="text-muted">Title</label>
-                    <input
-                        onChange={handleChange('title')}
-                        value={title}
-                        type="text"
-                        className="form-control"
-                        placeholder="Post title"
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <label className="text-muted">Content</label>
-                    <ReactQuill
-                        onChange={handleContent}
-                        value={content}
-                        theme="bubble"
-                        className="pb-5 mb-3"
-                        placeholder="Write something.."
-                        style={{ border: '1px solid #666' }}
-                    />
-                </div>
-                <div className="form-group">
-                    <label className="text-muted">User</label>
-                    <input
-                        onChange={handleChange('user')}
-                        value={user}
-                        type="text"
-                        className="form-control"
-                        placeholder="Your name"
-                        required
-                    />
-                </div>
-                <div>
-                    <button className="btn btn-primary">Create</button>
-                </div>
-            </form>
+                <form onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label className="text-muted">Title</label>
+                        <input
+                            onChange={handleChange('title')}
+                            value={title}
+                            type="text"
+                            className="form-control"
+                            placeholder="Post title"
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label className="text-muted">Content</label>
+                        <ReactQuill
+                            onChange={handleContent}
+                            value={content}
+                            theme="bubble"
+                            className="pb-5 mb-3"
+                            placeholder="Write something.."
+                            style={{ border: '1px solid #666' }}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label className="text-muted">User</label>
+                        <input
+                            onChange={handleChange('user')}
+                            value={user}
+                            type="text"
+                            className="form-control"
+                            placeholder="Your name"
+                            required
+                        />
+                    </div>
+                    <br/>
+                    <div>
+                        <button className="btn btn-primary">Create</button>
+                    </div>
+                </form>
+            </div>
+            <section className="">
+                <footer className="text-center text-white footer-main">
+
+                    <div className="container p-4 pb-0">
+                        <section className="">
+                            <p className="d-flex justify-content-center align-items-center">
+                                <span className="me-3">Register for free</span>
+                                <button type="button" className="btn btn-outline-light btn-rounded">
+                                    Sign up!
+                                </button>
+                            </p>
+                        </section>
+                    </div>
+                    <div className="text-center p-3 footer-btm">
+                        © 2020 Copyright:
+                        <a className="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                    </div>
+                </footer>
+            </section>
         </div>
     );
 };

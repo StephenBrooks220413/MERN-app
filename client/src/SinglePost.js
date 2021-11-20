@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Nav from './Nav';
+import './mdb5/css/mdb.min.css';
+import 'animate.css';
 import renderHTML from 'react-render-html';
 
 const SinglePost = props => {
@@ -16,9 +18,9 @@ const SinglePost = props => {
     const showSinglePost = () => (
         <div className="row">
             <div className="col-md-8 offset-md-2 pt-3 pb-2">
-                <h1>{post.title}</h1>
-                <div className="lead pt-3">{renderHTML(post.content)}</div>
-                <p>
+                <h1 className={"animate__animated animate__fadeInRight"}>{post.title}</h1>
+                <div className="animate__animated animate__fadeInUp lead pt-3">{renderHTML(post.content)}</div>
+                <p className={"animate__animated animate__fadeInDown"}>
                     Author <span className="badge">{post.user}</span> Published on{' '}
                     <span className="badge">{new Date(post.createdAt).toLocaleString()}</span>
                 </p>
@@ -27,9 +29,32 @@ const SinglePost = props => {
     );
 
     return (
-        <div className="container pb-5">
+        <div>
             <Nav />
-            {post && showSinglePost()}
+            <br/><br/>
+            <div className={"container space"}>
+                {post && showSinglePost()}
+            </div>
+            <br/><br/>
+            <section className="">
+                <footer className="text-center text-white footer-main">
+
+                    <div className="container p-4 pb-0">
+                        <section className="">
+                            <p className="d-flex justify-content-center align-items-center">
+                                <span className="me-3">Register for free</span>
+                                <button type="button" className="btn btn-outline-light btn-rounded">
+                                    Sign up!
+                                </button>
+                            </p>
+                        </section>
+                    </div>
+                    <div className="text-center p-3 footer-btm">
+                        © 2020 Copyright:
+                        <a className="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                    </div>
+                </footer>
+            </section>
         </div>
     );
 };

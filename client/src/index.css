@@ -1,0 +1,30 @@
+body {
+    margin: 0!important;
+    padding: 0!important;
+}
+
+.space {
+    margin-top: 130px;
+    margin-bottom: 70px;
+}
+
+.intro {
+    background: url(https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80)
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: auto;
+    padding-top: 320px;
+    padding-bottom: 290px;
+}
+
+.footer-main {
+    margin-top: 110px;
+    background-color: #0a4275;
+}
+
+.footer-btm {
+    background-color: rgba(0, 0, 0, 0.2);
+}
